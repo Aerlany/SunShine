@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <div id="app">
+      <router-view />
+   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+   name: "App",
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+   margin: 0;
+   padding: 0;
+}
+
+::-webkit-scrollbar {
+   width: 5px;
+   height: 10px;
+}
+
+::-webkit-scrollbar-track {
+   width: 6px;
+   background: rgba(#101f1c, 0.1);
+   -webkit-border-radius: 2em;
+   -moz-border-radius: 2em;
+   border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: rgba(144, 147, 153, 0.5);
+   background-clip: padding-box;
+   min-height: 28px;
+   -webkit-border-radius: 2em;
+   -moz-border-radius: 2em;
+   border-radius: 2em;
+   transition: background-color 0.3s;
+   cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: rgba(0, 0, 0, 0.3);
 }
 </style>
