@@ -40,6 +40,11 @@ export const Routes = [
                 component: () => import('@/views/welcome'),
                 name: 'welcome',
             },
+            {
+                path: '/user',
+                component: () => import('@/views/system/user'),
+                name: 'user',
+            },
         ]
     }
 ]

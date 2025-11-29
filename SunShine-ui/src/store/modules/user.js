@@ -57,7 +57,6 @@ export default {
       return new Promise((resolve, reject) => {
         logout(state.token).then((res) => {
           const { flag, data, msg } = res;
-
           commit('SET_TOKEN', '')
           //当前用户权限信息
           // commit('SET_ROLES', [])

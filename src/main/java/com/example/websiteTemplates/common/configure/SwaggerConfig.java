@@ -27,9 +27,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Aerlany’s网站模板系统接口文档")
+                .title("SunShine 网站模板系统接口文档")
                 .description("企业级开发")
-                .contact(new Contact("Aerlany", "作者URL", "1243535201@qq.com"))
+                .contact(new Contact("Aerlany", "作者Email", "1243535201@qq.com"))
                 .version("1.0.0")
                 .build();
     }

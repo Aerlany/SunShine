@@ -9,14 +9,14 @@ module.exports = defineConfig({
     //解决跨域问题
     proxy: {
       //统一图片请求接口
-      '/img': {
-        target: "http://localhost:8082",
-        // 允许跨域
-        changeOrigin: true,
-        pathRewrite: {
-          '^/img': ''
-        }
-      }
+      // '/img': {
+      //   target: "http://localhost:8082",
+      //   // 允许跨域
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/img': ''
+      //   }
+      // }
     }
   },
 })
