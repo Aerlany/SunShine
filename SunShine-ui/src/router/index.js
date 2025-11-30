@@ -45,6 +45,11 @@ export const Routes = [
                 component: () => import('@/views/system/user'),
                 name: 'user',
             },
+            {
+                path: '/help',
+                component: () => import('@/views/system/help'),
+                name: 'help',
+            },
         ]
     }
 ]

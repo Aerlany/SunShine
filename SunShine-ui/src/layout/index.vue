@@ -1,9 +1,11 @@
 <template>
    <div class="app-wrapper">
       <el-container>
-         <el-aside width="auto" class="asiderBar">
-            <AsiderBar />
-         </el-aside>
+         <transition name="slide-left">
+            <el-aside v-if="!isCollapse" width="auto" class="asiderBar">
+               <AsiderBar />
+            </el-aside>
+         </transition>
          <el-container>
             <el-header class="header">
                <TopBar />
@@ -25,6 +27,11 @@ export default {
       MainApp,
       TopBar,
    },
+   computed: {
+      isCollapse() {
+         return this.$store.state.navBar.isCollapse
+      }
+   }
 };
 </script>
 
@@ -33,7 +40,7 @@ export default {
    position: sticky;
    top: 0;
    z-index: 2;
-   background-color: #fff;
+   background-color: #33589e;
    -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
 }
@@ -41,9 +48,26 @@ export default {
 .asiderBar {
    position: sticky;
    top: 0;
-   background-color: #ebf0f4;
+   // background-color: #33589e;
    height: 100vh;
    -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+
+   // 添加响应式
+   @media (max-width: 768px) {
+      position: fixed;
+      z-index: 1000;
+   }
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+   transition: all 0.3s ease;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+   transform: translateX(-100%);
+   opacity: 0;
 }
 </style>

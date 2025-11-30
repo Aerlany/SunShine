@@ -21,7 +21,6 @@ Vue.prototype.api = api;
 import moment from 'moment';
 moment.locale("zh-CN");
 Vue.prototype.$moment = moment;
-
 //插件
 import plugins from "@/plugins";
 Vue.use(plugins);

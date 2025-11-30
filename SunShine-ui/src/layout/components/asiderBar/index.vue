@@ -1,7 +1,8 @@
 <template>
+
     <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse"
-        :unique-opened="true" background-color="#545c64" text-color="#fff" active-text-color="aqua">
-        <h2 class="title">{{ !isCollapse ? "工程项目管理平台" : "" }}</h2>
+        :unique-opened="true" background-color="#fff" text-color="#000000" active-text-color="#1890ff">
+        <div class="title">Sunshine 项目管理平台</div>
         <el-menu-item @click="goto('/')" index="1">
             <i class="el-icon-s-home"></i>
             <span slot="title">首页</span>
@@ -21,9 +22,11 @@
             </template>
             <el-menu-item @click="goto('/user')" index="3-1">用户管理</el-menu-item>
 
+            <el-menu-item @click="goto('/help')" index="3-2">帮助文档</el-menu-item>
         </el-submenu>
 
     </el-menu>
+
 </template>
 
 <script>
@@ -53,14 +56,21 @@ export default {
 .el-menu {
     border: none;
     height: 100%;
-    // overflow: hidden;
+    overflow: hidden;
+    width: 150px;
 }
 
 .title {
-    text-align: center;
+    display: flex;
+    height: 60px;
+    justify-content: center;
     margin: 10px auto;
+    align-items: center;
     font-size: 13px;
-    font-weight: 200;
+    // font-weight: 200;
     color: #fff;
+    background-color: #33589e;
+    margin: 0;
+    padding: 0;
 }
 </style>

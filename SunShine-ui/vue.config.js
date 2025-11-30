@@ -5,18 +5,32 @@ module.exports = defineConfig({
   devServer: {
     port: 7464,
     host: "localhost",
-
     //解决跨域问题
     proxy: {
-      //统一图片请求接口
-      // '/img': {
-      //   target: "http://localhost:8082",
-      //   // 允许跨域
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     '^/img': ''
-      //   }
-      // }
-    }
+      '/api': {
+        target: 'http://localhost:8082',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      },
+      // 代理Swagger相关请求
+      '/swagger-ui': {
+        target: 'http://localhost:8082',
+        changeOrigin: true
+      },
+      '/webjars': {
+        target: 'http://localhost:8082',
+        changeOrigin: true
+      },
+      '/v2/api-docs': {
+        target: 'http://localhost:8082',
+        changeOrigin: true
+      },
+      '/swagger-resources': {
+        target: 'http://localhost:8082',
+        changeOrigin: true
+      }
+    },
   },
 })

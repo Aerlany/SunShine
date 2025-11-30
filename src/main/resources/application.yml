@@ -1,7 +1,7 @@
 ### ????SpringBoot???????
 spring:
   application:
-    name: Demo_Gological_Application
+    name: sunshine-vue
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/geographic_information_data?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
@@ -13,7 +13,7 @@ spring:
       matching-strategy: ant_path_matcher
   #  redis 密码配置
   redis:
-    password: 1234
+    password: 123456
 
   servlet:
     multipart:

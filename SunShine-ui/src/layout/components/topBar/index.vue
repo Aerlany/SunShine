@@ -2,46 +2,28 @@
    <div>
       <div class="head_container">
          <div class="left_container">
-            <el-button
-               type="text"
-               icon="el-icon-s-fold"
-               @click="changeCollapse"
-            ></el-button>
-            <el-breadcrumb separator="/" class="NavBar">
-               <transition
-                  appear
-                  name="animate__animated animate__bounce"
-                  enter-active-class="animate__fadeInRight"
-                  leave-active-class="animate__fadeOutLeft"
-               >
+            <el-button type="text" icon="el-icon-s-fold" @click="changeCollapse"></el-button>
+            <!-- <el-breadcrumb separator="/" class="NavBar">
+               <transition appear name="animate__animated animate__bounce" enter-active-class="animate__fadeInRight"
+                  leave-active-class="animate__fadeOutLeft">
                   <div v-for="item in topBarDisPlayTags" :key="item">
                      <el-breadcrumb-item>
                         {{ item }}
                      </el-breadcrumb-item>
                   </div>
                </transition>
-            </el-breadcrumb>
+            </el-breadcrumb> -->
          </div>
 
-         <div class="center_container">项目管理系统</div>
+         <div class="center_container">Sunshine 项目管理系统</div>
          <div class="right_container">
-            <el-button
-               type="text"
-               icon="el-icon-search"
-               @click="fullScreen()"
-               style="margin-right: 5px"
-            ></el-button>
-            <el-button
-               type="text"
-               icon="el-icon-full-screen"
-               @click="fullScreen()"
-               style="margin-right: 10px"
-            ></el-button>
+            <el-button type="text" icon="el-icon-search" @click="fullScreen()"
+               style="margin-right: 5px;color: aliceblue;"></el-button>
+            <el-button type="text" icon="el-icon-full-screen" @click="fullScreen()"
+               style="margin-right: 10px;color: aliceblue;"></el-button>
             <el-dropdown>
                <span class="el-dropdown-link">
-                  <el-avatar
-                     src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-                  ></el-avatar>
+                  <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
                </span>
                <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item>UserInfo</el-dropdown-item>
@@ -82,9 +64,9 @@ export default {
                   .then(() => {
                      location.href = "/login";
                   })
-                  .catch(() => {});
+                  .catch(() => { });
             })
-            .catch(() => {});
+            .catch(() => { });
       },
    },
    computed: {
@@ -112,11 +94,13 @@ export default {
 
    .NavBar {
       margin-left: 10px;
+      color: #fff;
    }
 }
 
 .center_container {
    display: flex;
+   color: #fff;
 }
 
 .right_container {

@@ -6,8 +6,8 @@
 
 **系统需求**
 
-- JDK >= 1.8
-- MySQL >= 5.7
+- JDK >= 17
+- MySQL >= 8.0
 - Maven >= 3.0
-- Node >= 12
+- Node >= 16
 - Redis >= 3
