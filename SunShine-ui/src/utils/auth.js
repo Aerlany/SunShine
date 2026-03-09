@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'Token'
-const userIdKey = 'USER_INFOMARION_ID'
-const userNameKey = 'USER_INFOMARION_NAME'
-const permission = 'permission'
+const TokenKey = 'TOKEN'
+const userIdKey = 'USER_INFOMATION_ID'
+const userNameKey = 'USER_INFOMATION_NAME'
+const permission = 'PERMISSION'
 
 
 export function getToken() {

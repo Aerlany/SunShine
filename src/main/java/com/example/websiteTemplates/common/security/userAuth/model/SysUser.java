@@ -104,6 +104,4 @@ public class SysUser implements Serializable {
      * 用户权限标识
      */
     private Integer userLevelCode;
-
-
 }

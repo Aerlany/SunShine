@@ -4,7 +4,6 @@ import getters from './getters'
 
 import navBar from "./modules/navBar";
 import user from "./modules/user";
-import project from "./modules/project";
 import map from "./modules/map";
 
 
@@ -14,7 +13,6 @@ const store = new Vuex.Store({
     modules: {
         navBar,
         user,
-        project,
         map
     },
     getters

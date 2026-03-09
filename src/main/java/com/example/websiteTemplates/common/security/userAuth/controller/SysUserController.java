@@ -7,6 +7,7 @@ import com.example.websiteTemplates.common.tools.web.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @Api(tags = "用户接口")
-@RequestMapping("/user")
+@RequestMapping("/system/user")
 public class SysUserController {
 
     @Autowired
@@ -32,6 +33,7 @@ public class SysUserController {
     }
 
     @ApiOperation("注销接口")
+    @PreAuthorize("hasAuthority('admin')")
     @PostMapping("/logout")
     public ResponseResult Logout() {
         return service.logout();

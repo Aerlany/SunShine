@@ -4,6 +4,14 @@ import { getToken } from '@/utils/auth'
 import errorCode from '@/utils/errorCode'
 import cache from '@/plugins/cache'
 
+/**
+ * 这里是axios的组件封装
+ * 1、定义了全局请求路径
+ * 2、设置了请求拦截器
+ * 3、设置了响应拦截器
+ * 4、
+ */
+
 //文件下载实例
 let downloadLoadingInstance;
 // 是否显示重新登录

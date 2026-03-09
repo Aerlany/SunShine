@@ -125,7 +125,6 @@
 <script>
 export default {
     name: 'SwaggerViewer',
-    components: { SwaggerUI },
     data() {
         return {
             swaggerUrl: 'http://localhost:7464/swagger-ui/',

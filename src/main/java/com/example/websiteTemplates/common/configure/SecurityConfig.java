@@ -50,8 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 接口放行
                 .authorizeRequests()
-                .antMatchers("/user/login").anonymous()
-                .antMatchers("/user/register").anonymous()
+                .antMatchers("/system/user/login").anonymous()
+                .antMatchers("/system//user/register").anonymous()
 
                 // swagger放行
                 .antMatchers("/swagger-ui/**").anonymous()
@@ -62,24 +62,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //文件相关接口放行
                 .antMatchers("/staticResource/**").anonymous()
-
                 //接口权限配置
                 .antMatchers("/projectInformation/**").hasAuthority("admin")
-
                 // 其他接口不放行
                 .anyRequest().authenticated();
 
-
-        //配置自定义过滤器位置
+        // 配置自定义过滤器位置
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-
-        //配置异常处理器
+        // 配置异常处理器
         http.exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .accessDeniedHandler(accessDeniedHandler);
 
         // 允许跨域
         http.cors();
+        // 设置iframe跨域访问许可
+        http.headers().frameOptions().sameOrigin();
     }
 
     // 在容器中暴露 AuthenticationManager 类型以在 接口实现类中调用
@@ -88,5 +86,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
 }

@@ -40,7 +40,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String token = request.getHeader("Token");
         // TODO 如果token不存在
         if (!StringUtils.hasText(token)) {
-            //当第一次用户登陆时伟携带Token时放行
+            //当第一次用户登陆时未携带Token时放行
             filterChain.doFilter(request, response);
             //为了防止过滤器重复执行
             return;

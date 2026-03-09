@@ -35,14 +35,12 @@ public class LoginUser implements UserDetails {
         if (authorities != null) {
             return authorities;
         }
-
         // Version1
 //        List<GrantedAuthority> authorityList = new ArrayList<>();
 //        for (String string : permission) {
 //            SimpleGrantedAuthority authority = new SimpleGrantedAuthority("");
 //            authorityList.add(authority);
 //        }
-
         //version2
         authorities = permission.stream()
                 .map(SimpleGrantedAuthority::new)
